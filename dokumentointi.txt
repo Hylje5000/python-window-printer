@@ -1,0 +1,60 @@
+﻿Ohjelmoinnin peruskurssin harjoitustyö
+Ultimaattinen Ikkuna-tulostin
+Kerttulin Lukio 22.11.2018
+Tekijät Miska Kytö ja Juho Torkkeli
+
+1. Ohjelman kuvaus ja analysointi
+=================================
+Ohjelman tarkoitus on luoda ikkuna, jossa lukee käyttäjän syöttämä teksti. Käyttäjä pystyy muokkaamaan luotavan ikkunan eri parametrejä, jotka muokkaavat sen ulkonäköä. Käyttäjälle annetaan myös mahdollisuus ladata aiemmin tallennettu ikkuna. Ikkuna ja teksti luodaan käyttämällä Pythonin turtle-kirjastoa. Ohjelma on kirjoitettu Pythonin 3.7-versiossa.
+
+2. Ratkaisuperiaate
+=================================
+Pääohjelma kysyy henkilöltä vastauksen neljään eri parametriin. Näissä input-lauseissa kysytään käyttäjältä haluttu teksti, sen koko kokonaislukuna 0-100, ikkunan taustan väri sekä tekstin väri. Ohjelma myös kysyy, haluaako käyttäjä ladata aikaisemmin tallennetun ikkunan. 
+
+3. Ohjelman ja sen osien kuvaaminen
+=================================
+Ohjelmassa käytetään aliohjelmia taustan_vari, tekstin_vari, ikkuna_ja_teksti ja tallennus, aku.
+
+3.1 Aliohjelmat:
+=================================
+
+Funktio taustan_vari:
+Tehtävä: Käsittelee pääohjelmassa käyttäjältä kysytyn ikkunan taustan värin ja kääntää sen suomesta englanniksi, että ohjelma voi käyttää sitä.
+Parametrit: Funktio tarvitsee arvokseen merkkijono.
+Paluuarvo: Funktio palauttaa yhden merkkijonon, jota turtle voi käyttää komentona.
+
+Funktio tekstin_vari:
+Tehtävä: Käsittelee käyttäjältä kysytyn tekstin värin samalla tavalla kuin taustan väri käsitellään funktiossa taustan_vari.
+Parametrit: Funktio tarvitsee arvokseen merkkijonon.
+Paluuarvo: Funktio palauttaa yhden merkkijonon, jota tekstin piirtävä turtle voi käyttää komentona.
+
+Funktio ikkuna_ja_teksti:
+Tehtävä: Luoda piirtoalueeksi ikkuna, sekä kirjoittaa käyttäjän suorittama teksti
+Parametrit: bgcolor parametri muokkaa ikkunan taustavärin taustan_vari funktion mukaan. setup parametri määrää ikkunan kooksi 800x600 px. color parametri määrää tekstin värin tekstin_vari funktion mukaan. write parametri lopuksi kirjoittaa käyttäjän syöttämän tekstin Comic Sans-fontilla, sekä oikealla koolla.
+Paluuarvo: Funktio luo ikkunan ja piirtää siihen tekstin käyttäen aiemmin mainittuja parametrejä.
+
+Funktio tallennus:
+Tehtävä: tallenta käyttäjän syöttämät tiedot omille riveille tiedostoon
+Parametrit: tausta_vari, kyna_vari, teksti, koko Nämä psrsmetriy tsllennetaan tiedostoon.
+Paluuarvo: funktio ei palauta mitään
+
+Funktio aku:
+Tehtävä: Avaa tiedoston johoon tallennus funktio on tallentanut tiedot ja purkaane llistaan.
+Parametrit: funktio ei tarvitse toimiakseen parametrejä
+Paluuarvo: palauttaa puretut tiedot listana
+
+Funktiot tausta, kyna, teksti ja koko
+Tehtävä: Jokainen funktioista palauttaa nimensä mukaisen arvon aku funktion palauttamasta listasta.
+Parametrit: jokainen saa parametriksen lista muuttujan, josta funktiot ottvat oikeaan tiedon
+Paluuarvo: funktiot palauttvat listasta ottamansa tiedon
+
+
+3.2 Tallennusmekanismi
+=================================
+Ohjelma tallentaa käyttäjän antamat tiedot automaattisesti jutut.txt tiedostoon, jotta ohjelmaa
+myöhemmin käytettäessä voidaan avata viimeiseksi käytetty ikkuna. Tiedot tallennetaan omille riveilleen, joista ne voidaan myöhemmin lukea ja käyttää luotavan ikkunan arvoina.
+
+
+4. Ohjelman testaus
+===================
+Ohjelmaa on testattu syöttämällä arvoja jolla ohjelman oltetaaan toimivan, jolloin se toimmii odotetusti. Testaus suoritettu myös virheellisillä arvoilla jolloin ohjelma palutaa halutun virhe ilmoituksen.
